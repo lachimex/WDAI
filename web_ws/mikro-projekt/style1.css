@@ -1,0 +1,128 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://images4.alphacoders.com/699/699780.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+header{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header img{
+    padding: 1%;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+  
+  /* Style the links inside the navigation bar */
+.topnav a {
+    height: 100%;
+    float: left;
+    color: #F8E4B9;
+    text-align: center;
+    padding: 2vh 1vw;
+    font-size: 17px;
+    text-decoration: none;
+}
+  
+  /* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #F8E4B9;
+    color: #333;
+}
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #F8E4B9;
+    color: #333;
+}
+
+main{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1{
+    display: none;
+}
+
+article{
+    background-color: lightsalmon;
+}
+
+footer{
+    background-color: #333;
+    display: flex;
+    justify-content: flex-end;
+    height: 5%;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer a{
+    text-decoration: none;
+    color: #F8E4B9;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+footer a:hover{
+    background-color: #F8E4B9;
+    color: #333;
+}
+
+iframe{
+    height: 600px;
+    width: 900px;
+}
+
+@media (max-width:700px){
+    iframe{
+        display: none;
+    }
+    main h1{
+        display: flex;
+        color: lightcoral;
+    }
+    header img{
+        width: 300px;
+      }
+      body{
+        margin-right: 0;
+      }
+}
+
+@media (max-width:500px){
+    .topnav{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topnav a{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    header img{
+        margin-bottom: 30px;
+        margin-top: 30px;
+      }
+  }
+

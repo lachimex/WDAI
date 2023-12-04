@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szachowe lowe</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="index.html">Strona główna</a>
+    <a href="szachownica.html">Interaktywna szachownica</a>
+    <a href="podstrona2.html">Zasady i historia</a>
+  </div>
+  <header>
+    <img
+      src="https://see.fontimg.com/api/renderfont4/DO79R/eyJyIjoiZnMiLCJoIjoxMzcsInciOjEwMDAsImZzIjoxMzcsImZnYyI6IiMwMDAwMDAiLCJiZ2MiOiIjRkZGRkZGIiwidCI6MX0/U3phY2hvd2UgTG92ZQ/spring-easter.png"
+      alt="Cursive fonts">
+  </header>
+  <main>
+    <div class="slider_and_more_info">
+      <div class="slider" id="slider1">
+        <div class="slider-slides">
+          <article class="slider-slide is-active slide1">
+            <div class="slider-slide-text">
+              <h1>
+                "Są dwa typy poświęceń: te poprawne i te moje"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Mikhail Tal
+            </h2>
+
+          </article>
+          <article class="slider-slide slide2">
+            <div class="slider-slide-text">
+              <h1>"Gdy zobaczysz dobry ruch, poszukaj jeszcze lepszego"</h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Emanuel Lasker
+            </h2>
+          </article>
+          <article class="slider-slide slide3">
+            <div class="slider-slide-text">
+              <h1>
+                "Wszystkie pomyłki są na szachownicy, czekając by je popełniono"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Savielly Tartakower
+            </h2>
+          </article>
+          <article class="slider-slide slide4">
+            <div class="slider-slide-text">
+              <h1>
+                "Nawet kiepski plan jest lepszy niż brak planu"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Mikhail Chigorin
+            </h2>
+          </article>
+
+          <article class="slider-slide slide5">
+            <div class="slider-slide-text">
+              <h1>
+                "Jeśli wygrywasz, upraszczaj; jeśli przegrywasz, komplikuj"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Bruce Pandolfini
+            </h2>
+          </article>
+
+          <article class="slider-slide slide6">
+            <div class="slider-slide-text">
+              <h1>
+                "W szachach chodzi o to żeby robić dobre ruchy, a nie szybkie"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Jeremy Silman
+            </h2>
+          </article>
+
+          <article class="slider-slide slide7">
+            <div class="slider-slide-text">
+              <h1>
+                "Nie wierzę w psychologię, wierzę w dobre ruchy"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Bobby Fischer
+            </h2>
+          </article>
+
+          <article class="slider-slide slide8">
+            <div class="slider-slide-text">
+              <h1>
+                "Jeden zły ruch anuluje 40 dobrych"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Bernhard Horwitz
+            </h2>
+          </article>
+
+          <article class="slider-slide slide9">
+            <div class="slider-slide-text">
+              <h1>
+                "Nikt jeszcze nie wygrał partii szachów poddając się"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Savielly Tartakower
+            </h2>
+          </article>
+
+          <article class="slider-slide slide10">
+            <div class="slider-slide-text">
+              <h1>
+                "W życiu, jak w szachach, przezorność wygrywa"
+              </h1>
+            </div>
+            <h2 class="slider-slide-title">
+              ~ Charles Buxton
+            </h2>
+          </article>
+
+        </div>
+      </div>
+      <a href="podstrona2.html" class="enlarge">Kliknij tutaj, żeby dowiedzieć się więcej...</a>
+    </div>
+
+    <div class="rest_of_the_content">
+      <label for="form">
+        ZAPISZ SIĘ NA TURNIEJ SZACHOWY
+      </label>
+      <form autocomplete="off" id="form" name="form">
+        <input type="text" id="name and surname" placeholder="Podaj imię i nazwisko" required>
+        <input type="email" id="email" placeholder="Adres e-mail" required>
+        <fieldset>
+          <legend>Podaj swoją płeć</legend>
+          <div>
+            <input type="radio" id="sex1" name="sex" value="man" required />
+            <label for="sex1">Mężczyzna</label>
+
+            <input type="radio" id="sex2" name="sex" value="woman" required />
+            <label for="sex2">Kobieta</label>
+
+            <input type="radio" id="sex3" name="sex" value="other" required />
+            <label for="sex3">Inne</label>
+          </div>
+        </fieldset>
+        <label for="wojewodztwo">Wybierz województwo:</label>
+        <select id="wojewodztwo" name="wojewodztwo" required>
+          <option value="dolnośląskie">Dolnośląskie</option>
+          <option value="kujawsko-pomorskie">Kujawsko-Pomorskie</option>
+          <option value="lubelskie">Lubelskie</option>
+          <option value="lubuskie">Lubuskie</option>
+          <option value="łódzkie">Łódzkie</option>
+          <option value="małopolskie">Małopolskie</option>
+          <option value="mazowieckie">Mazowieckie</option>
+          <option value="opolskie">Opolskie</option>
+          <option value="podkarpackie">Podkarpackie</option>
+          <option value="podlaskie">Podlaskie</option>
+          <option value="pomorskie">Pomorskie</option>
+          <option value="śląskie">Śląskie</option>
+          <option value="świętokrzyskie">Świętokrzyskie</option>
+          <option value="warmińsko-mazurskie">Warmińsko-Mazurskie</option>
+          <option value="wielkopolskie">Wielkopolskie</option>
+          <option value="zachodniopomorskie">Zachodniopomorskie</option>
+        </select>
+        <label for="message">Dodatkowe informacje o tobie</label>
+        <textarea name="message" rows="3" cols="10"></textarea>
+        <div>
+          <button type="submit">Wyślij</button>
+        </div>
+      </form>
+
+    </div>
+  </main>
+  <footer>
+    <a href="podstrona3.html">O mnie</a>
+  </footer>
+  <script src="script1.js"></script>
+</body>
+
+</html>

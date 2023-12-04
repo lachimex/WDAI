@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="1">
+        <button onclick="fetchWithSorting(null)">
+            Bez sortowania
+        </button>
+        <button onclick="fetchWithSorting(compareByTitleAsc)">
+            Sortowanie rosnace
+        </button>
+        <button onclick="fetchWithSorting(compareByTitleDesc)">
+            Sortowanie malejace
+        </button>
+    </nav>
+    <nav id="2">
+        <div class="filter">
+            <p>Wyszukaj:</p>
+            <input type="text" id="myInput">
+        </div>
+    </nav>
+    <div id = "data-output"></div>
+    <script src="script.js"></script>
+
+</body>
+</html>

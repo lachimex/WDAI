@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#data-output{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+#data-content{
+    display: flex;
+    flex-direction: row;
+}
+
+#img{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+#title{
+    width: 300px;
+}

@@ -1,0 +1,109 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url(zdjecia/board-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: url(zdjecia/rsz_aim.png) 50 50, auto;
+}
+
+nav img{
+    position: left;
+    height: 100px;
+}
+
+.healthbar img{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+nav #score{
+    color: white;
+    font-size: 80px;
+    font-style: bold;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    align-items: center;
+    z-index: 1;
+}   
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#end{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#final_score{
+    color: white;
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+#restart{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
+    height: 200px;
+    width: 400px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: ease-in-out .4s;
+    font-size: 40px;
+}
+
+#restart:hover{
+    transform: scale(120%);
+}
+
+#restart p{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.zombie {
+    user-select: none;
+    -webkit-user-drag: none;
+    width: 200px;
+    height: 310px;
+    left: -300px;
+    background: url(zdjecia/walkingdead.png);
+    position: absolute;
+    z-index: 1;
+    animation: zombieAnim 0.6s 0s infinite steps(9),
+               zombieWalk 10s 1 linear;
+}
+
+@keyframes zombieAnim {
+    100% {
+        background-position: -1800px 0;
+    }
+}
+
+@keyframes zombieWalk {
+    from {left:110%}
+    to {left: -20%;}
+    100%{ 
+        display: none;
+    }
+}
