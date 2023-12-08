@@ -10,9 +10,8 @@ function compareByTitleAsc(a, b){
 
 async function fetchWithSorting(sortingFunction){
    await fetch('https://dummyjson.com/products')
-  .then(response => response.json()) // Parsowanie odpowiedzi jako JSON
+  .then(response => response.json())
   .then(data => {
-    // Tutaj masz obiekt JavaScript zawierający dane z pliku JSON
     if (sortingFunction != null){
         data.products.sort(sortingFunction);
     }
@@ -35,7 +34,6 @@ async function fetchWithSorting(sortingFunction){
 
             placeholder.innerHTML = out;
 
-    // Możesz teraz pracować z danymi, np. wyświetlić je w konsoli lub wykonać inne operacje.
   })
   .catch(error => {
     console.error('Błąd podczas pobierania danych JSON:', error);
