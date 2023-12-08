@@ -1,4 +1,4 @@
-export default function Product({index, product}){
+export default function Product({product}){
     return (
         <div id="data-content">
           <div id="img">
