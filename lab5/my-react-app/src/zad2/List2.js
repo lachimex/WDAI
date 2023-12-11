@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "./Product.js";
+import './style2.css'
 
 function compareByTitleDesc(a, b) {
     var comparison = a.title.localeCompare(b.title);
@@ -89,7 +90,7 @@ export default function List() {
             </nav>
             {data && data.length > 0 ? (
                 data.map((product) => (
-                    <Product key={product.id} product={product}/>
+                    <Product key={product.id} product={product} />
                 ))
             ) : (
                 <p>No data</p>
