@@ -20,9 +20,11 @@ export default function Product({ product }) {
   const handleConfirmClick = () => {
     if (inputValTitle !== ""){
       product.title = inputValTitle;
+      setInputValTitle("");
     }
     if (inputValDesc !== ""){
       product.description = inputValDesc;
+      setInputValDesc("");
     }
     setEditing(false);
   };
