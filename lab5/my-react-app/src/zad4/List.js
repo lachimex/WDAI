@@ -63,6 +63,10 @@ export default function List() {
         setData(filterData);
     };
 
+    function handleEditClick(product){
+        console.log('Editing product:', product);
+    };
+
     return (
         <>
             <nav id="1">
@@ -89,7 +93,7 @@ export default function List() {
             </nav>
             {data && data.length > 0 ? (
                 data.map((product) => (
-                    <Product key={product.id} product={product} />
+                    <Product key={product.id} product={product}/>
                 ))
             ) : (
                 <p>No data</p>
