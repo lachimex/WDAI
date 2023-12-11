@@ -18,8 +18,12 @@ export default function Product({ product }) {
   };
 
   const handleConfirmClick = () => {
-    product.title = inputValTitle;
-    product.description = inputValDesc;
+    if (inputValTitle !== ""){
+      product.title = inputValTitle;
+    }
+    if (inputValDesc !== ""){
+      product.description = inputValDesc;
+    }
     setEditing(false);
   };
 
@@ -39,9 +43,9 @@ export default function Product({ product }) {
           </button>
           <form id="form">
             <label htmlFor='changeTitle'>Tytuł:</label>
-            <input type='text' id='changeTitle' value={inputValTitle} onChange={handleInputTitleChange}></input>
+            <input type='text' id='changeTitle' value={inputValTitle} onChange={handleInputTitleChange} autoComplete='off'></input>
             <label htmlFor='changeDescription'>Opis:</label>
-            <input type='text' id='changeDescription' value={inputValDesc} onChange={handleInputDescChange}></input>
+            <input type='text' id='changeDescription' value={inputValDesc} onChange={handleInputDescChange} autoComplete='off'></input>
           </form>
         </>
       ) : (
