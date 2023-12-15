@@ -1,3 +1,5 @@
+import "./style2.css"
+
 export default function Product({product}){
     return (
         <div id="data-content">

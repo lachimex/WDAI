@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./style4.css"
 
 export default function Product({ product }) {
   const [isEditing, setEditing] = useState(false);

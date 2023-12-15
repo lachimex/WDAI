@@ -5,15 +5,17 @@ import Layout from './layout/layout.js';
 import Hello from './zad1/zad1.js';
 import List2 from './zad2/List2.js'
 import List4 from './zad4/List4.js';
+import Exercise5 from './zad5/login.js';
 
 export default function App() {
     return (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route path='zad1' element={<Hello />} />
+            <Route path="zad1" element={<Hello />} />
             <Route path="zad2" element={<List2 />} />
             <Route path="zad4" element={<List4 />} />
+            <Route path="zad5" element={<Exercise5 />} />
           </Route>
         </Routes>
       </BrowserRouter>
