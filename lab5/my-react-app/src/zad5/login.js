@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import "./zad5.css"
 
 function App() {
     const [username, setUsername] = useState('');
@@ -16,7 +17,7 @@ function App() {
             });
             setToken(response.data.token);
             setLoggedIn(true);
-            setMessage('');
+            setMessage('zalogowano');
         } catch (error) {
             setMessage('Invalid username or password');
         }
@@ -35,29 +36,36 @@ function App() {
         }
     };
 
+    const handleLogout = () => {
+        setMessage("wylogowano");
+        setToken("");
+        setLoggedIn(false);
+        setUsername("");
+        setPassword("");
+    }
+
     return (
-        <div className="App">
+        <div className="zad5">
             {!loggedIn ? (
                 <>
-                <h1>Zaloguj się</h1>
-                <div>
-                    <label>Username: </label>
-                    <input type="text" onChange={(e) => setUsername(e.target.value)} />
-                </div>
-                <div>
-                    <label>Password: </label>
-                    <input type="password" onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <button onClick={handleLogin}>Login</button>
+                    <h1>Zaloguj się</h1>
+                    <form>
+                        <label>Username: </label>
+                        <input type="text" onChange={(e) => setUsername(e.target.value)} />
+                        <label>Password: </label>
+                        <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                    </form>
+                    <button onClick={handleLogin}>Login</button>
                 </>
             ) : (
                 <>
-                <button onClick={handleProtectedRequest}>Get Protected Data</button>
-                <p>{message}</p>
+                    <button onClick={handleProtectedRequest}>Get Protected Data</button>
+                    <button onClick={handleLogout}>Wyloguj się</button>
                 </>
             )}
-            
-
+            <>
+            <p>{message}</p>
+            </>
         </div>
     );
 }

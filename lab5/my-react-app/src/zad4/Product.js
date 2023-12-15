@@ -38,7 +38,12 @@ export default function Product({ product }) {
       <div id="title">
         <p>{product.title}</p>
       </div>
-      <p>{product.description}</p>
+      <div id="price">
+        <p>{product.price}$</p>
+      </div>
+      <div id="description">
+        <p>{product.description}</p>
+      </div>
       {isEditing ? (
         <>
           <button className="edit" id="confirmButton" onClick={handleConfirmClick}>

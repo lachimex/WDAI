@@ -65,7 +65,7 @@ export default function List() {
     };
 
     return (
-        <>
+        <div>
             <nav id="1">
                 <button onClick={() => handleButtonClick(null)}>
                     Bez filtrowania
@@ -95,6 +95,6 @@ export default function List() {
             ) : (
                 <p>No data</p>
             )}
-        </>
+        </div>
     );
 }

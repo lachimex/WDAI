@@ -1,9 +1,10 @@
 import { Outlet, Link } from "react-router-dom";
+import "./layout.css"
 
 const Layout = () => {
   return (
     <>
-      <nav>
+      <nav className="navbar">
         <ul>
           <li>
             <Link to='/zad1'>Zad1</Link>

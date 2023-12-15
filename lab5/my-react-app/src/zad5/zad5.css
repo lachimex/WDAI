@@ -1,0 +1,15 @@
+.zad5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input{
+    margin: 25px;
+}
+
+.zad5 button{
+    margin: 50px;
+    padding: 20px;
+    cursor: pointer;
+}
