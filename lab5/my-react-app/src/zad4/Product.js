@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import "./style4.css"
 
 export default function Product({ product }) {
   const [isEditing, setEditing] = useState(false);
@@ -19,11 +18,11 @@ export default function Product({ product }) {
   };
 
   const handleConfirmClick = () => {
-    if (inputValTitle !== ""){
+    if (inputValTitle !== "") {
       product.title = inputValTitle;
       setInputValTitle("");
     }
-    if (inputValDesc !== ""){
+    if (inputValDesc !== "") {
       product.description = inputValDesc;
       setInputValDesc("");
     }
@@ -31,37 +30,42 @@ export default function Product({ product }) {
   };
 
   return (
-    <div id="data-content">
-      <div id="img">
+    <tr>
+      <td className="thumbnail">
         <img src={product.thumbnail} alt="" />
-      </div>
-      <div id="title">
-        <p>{product.title}</p>
-      </div>
-      <div id="price">
-        <p>{product.price}$</p>
-      </div>
-      <div id="description">
-        <p>{product.description}</p>
-      </div>
-      {isEditing ? (
-        <>
-          <button className="edit" id="confirmButton" onClick={handleConfirmClick}>
-            Zatwierdź
+      </td>
+      <td className="title">
+        {product.title}
+      </td>
+      <td className="price">
+        {product.price}$
+      </td>
+      <td className="description">
+        {product.description}
+      </td>
+      <td className="editing">
+        {isEditing ? (
+          <>
+            <button className="edit" id="confirmButton" onClick={handleConfirmClick}>
+              Zatwierdź
+            </button>
+            <div>
+              <label htmlFor='changeTitle'>Tytuł:</label>
+              <input type='text' id='changeTitle' value={inputValTitle} onChange={handleInputTitleChange} autoComplete='off'></input>
+
+            </div>
+            <div>
+              <label htmlFor='changeDescription'>Opis:</label>
+              <input type='text' id='changeDescription' value={inputValDesc} onChange={handleInputDescChange} autoComplete='off'></input>
+            </div>
+          </>
+        ) : (
+          <button className="edit" id="editButton" onClick={handleEditClick}>
+            Edytuj
           </button>
-          <form id="form">
-            <label htmlFor='changeTitle'>Tytuł:</label>
-            <input type='text' id='changeTitle' value={inputValTitle} onChange={handleInputTitleChange} autoComplete='off'></input>
-            <label htmlFor='changeDescription'>Opis:</label>
-            <input type='text' id='changeDescription' value={inputValDesc} onChange={handleInputDescChange} autoComplete='off'></input>
-          </form>
-        </>
-      ) : (
-        <button className="edit" id="editButton" onClick={handleEditClick}>
-          Edytuj
-        </button>
-      )}
-    </div>
+        )}
+      </td>
+    </tr>
   );
 }
 

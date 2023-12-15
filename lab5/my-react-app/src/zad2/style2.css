@@ -1,72 +1,93 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-  }
-  
-  .navbar {
-    background-color: #333;
-    padding: 10px;
-    color: white;
-    text-align: center;
-  }
-  
-  .navbar button {
-    margin: 5px;
-    padding: 8px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  .navbar button:hover {
-    background-color: #45a049;
-  }
-  
-  .filter {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .filter p {
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.buttons button {
     margin-right: 10px;
-  }
-  
-  .filter input {
-    padding: 8px;
-    font-size: 14px;
-  }
-  
-  .product {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-  }
+    padding: 10px;
+    cursor: pointer;
+    background-color:lightgreen;
+    border-radius: 5px;
+}
 
-  #price{
-    margin-right: 50px;
-  }
-
-  #description{
-    width: 1000px;
-    margin-right: 50px;
-  }
-
-  #data_content{
+nav{
+    height: 100px;
     display: flex;
-    justify-content: space-evenly;
-  }
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar {
+    width: 100vw;
+}
+
+.filter {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+
+.filter p {
+    margin-right: 50px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.product-table th {
+    background-color: #f2f2f2;
+}
+
+.title, .price{
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.description {
+    max-width: 300px;
+    overflow-wrap: normal;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.price {
+    color: #008000; /* Green color for price */
+}
+
+img{
+    height: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .navbar button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

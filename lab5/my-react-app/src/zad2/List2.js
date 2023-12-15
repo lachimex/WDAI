@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "./Product.js";
-import './style2.css'
+import "./style2.css"
 
 function compareByTitleDesc(a, b) {
     var comparison = a.title.localeCompare(b.title);
@@ -37,18 +37,18 @@ export default function List() {
                 const result = await fetching();
                 setData(result.products);
                 setInitData(result.products);
-            } catch (error) {}
+            } catch (error) { }
         })();
     }, []);
 
     const handleButtonClick = async (sortingFunction) => {
-        if (sortingFunction){
+        if (sortingFunction) {
             const sortedData = [...data].sort(sortingFunction);
             setData(sortedData);
             const initSortedData = [...initData].sort(sortingFunction);
             setInitData(initSortedData);
         }
-        else{
+        else {
             const result = await fetching();
             setData(result.products);
             setInitData(result.products);
@@ -65,8 +65,8 @@ export default function List() {
     };
 
     return (
-        <div>
-            <nav id="1">
+        <>
+            <nav className="buttons">
                 <button onClick={() => handleButtonClick(null)}>
                     Bez filtrowania
                 </button>
@@ -77,24 +77,34 @@ export default function List() {
                     Sortowanie malejace
                 </button>
             </nav>
-            <nav id="2">
-                <div className="filter">
-                    <p>Wyszukaj:</p>
-                    <input
-                        type="text"
-                        id="myInput"
-                        value={filterValue}
-                        onChange={handleInputChange}
-                    />
-                </div>
-            </nav>
-            {data && data.length > 0 ? (
-                data.map((product) => (
-                    <Product key={product.id} product={product} />
-                ))
-            ) : (
-                <p>No data</p>
-            )}
-        </div>
+            <div className="filter">
+                <p>Wyszukaj:</p>
+                <input
+                    type="text"
+                    id="myInput"
+                    value={filterValue}
+                    onChange={handleInputChange}
+                />
+            </div>
+            <div className="container">
+                {data && data.length > 0 ? (
+                    <table className="product-table">
+                        <tr>
+                            <th id="thumbnail"></th>
+                            <th id="title">Title</th>
+                            <th id="price">Price</th>
+                            <th id="description">Description</th>
+                        </tr>
+                        <tbody>
+                            {data.map((product) => (
+                                <Product key={product.id} product={product} />
+                            ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <p>No data</p>
+                )}
+            </div>
+        </>
     );
 }
