@@ -7,7 +7,16 @@ function App() {
     const [password, setPassword] = useState('');
     const [token, setToken] = useState('');
     const [message, setMessage] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [state, setState] = useState("default");
+
+    function setConfirmationPassword(confirmationPassword){
+        if (confirmationPassword != password){
+            setMessage("hasła są różne");
+        }
+        else{
+            setMessage("");
+        }
+    }
 
     const handleLogin = async () => {
         try {
@@ -16,7 +25,7 @@ function App() {
                 password: password,
             });
             setToken(response.data.token);
-            setLoggedIn(true);
+            setState("logged in");
             setMessage('zalogowano');
         } catch (error) {
             setMessage('Invalid username or password');
@@ -45,6 +54,7 @@ function App() {
             setMessage(JSON.stringify(response.data));
             document.getElementById('username').value='';
             document.getElementById('password').value='';
+            document.getElementById('confirmationPassowrd').value='';
         } catch (error) {
             setMessage('Invalid username or password');
         }
@@ -53,16 +63,41 @@ function App() {
     const handleLogout = () => {
         setMessage("wylogowano");
         setToken("");
-        setLoggedIn(false);
+        setState("default");
         setUsername("");
         setPassword("");
     }
 
-    return (
-        <div className="zad5">
-            {!loggedIn ? (
-                <>
-                    <h1>Zaloguj się/Zarejestruj się</h1>
+    const renderContentBasedOnState = () => {
+        switch (state) {
+            case "logged in":
+                return (
+                <div id='buttons'>
+                    <button onClick={handleProtectedRequest}>Get Protected Data</button>
+                    <button onClick={handleLogout}>Wyloguj się</button>
+                </div>)
+            case "registering":
+                return (
+                    <>
+                    <h1>Zarejestruj się</h1>
+                    <form>
+                        <label>Username: </label>
+                        <input id='username' type="text" onChange={(e) => setUsername(e.target.value)} />
+                        <label>Password: </label>
+                        <input id='password' type="password" onChange={(e) => setPassword(e.target.value)} />
+                        <label>Potwierdź hasło: </label>
+                        <input id='confirmationPassword' type="password" onChange={(e) => setConfirmationPassword(e.target.value)} />
+                    </form>
+                    <div id='buttons'>
+                    <button onClick={handleRegister}>Zarejestruj się</button>
+                    <button onClick={() => setState("default")}>Powrót</button>
+                    </div>
+                    </>
+                )
+            case "default":
+                return (
+                    <>
+                    <h1>Zaloguj się</h1>
                     <form>
                         <label>Username: </label>
                         <input id='username' type="text" onChange={(e) => setUsername(e.target.value)} />
@@ -71,15 +106,16 @@ function App() {
                     </form>
                     <div id='buttons'>
                     <button onClick={handleLogin}>Login</button>
-                    <button onClick={handleRegister}>Zarejestruj się</button>
+                    <button onClick={() => setState("registering")}>Zarejestruj się</button>
                     </div>
                 </>
-            ) : (
-                <div id='buttons'>
-                    <button onClick={handleProtectedRequest}>Get Protected Data</button>
-                    <button onClick={handleLogout}>Wyloguj się</button>
-                </div>
-            )}
+                )
+        }
+    }
+
+    return (
+        <div className="zad5">
+            {renderContentBasedOnState()}
             <>
             <p>{message}</p>
             </>
