@@ -36,6 +36,20 @@ function App() {
         }
     };
 
+    const handleRegister = async () => {
+        try {
+            const response = await axios.post('http://localhost:5000/register', {
+                username: username,
+                password: password,
+            });
+            setMessage(JSON.stringify(response.data));
+            document.getElementById('username').value='';
+            document.getElementById('password').value='';
+        } catch (error) {
+            setMessage('Invalid username or password');
+        }
+    }
+
     const handleLogout = () => {
         setMessage("wylogowano");
         setToken("");
@@ -48,20 +62,23 @@ function App() {
         <div className="zad5">
             {!loggedIn ? (
                 <>
-                    <h1>Zaloguj się</h1>
+                    <h1>Zaloguj się/Zarejestruj się</h1>
                     <form>
                         <label>Username: </label>
-                        <input type="text" onChange={(e) => setUsername(e.target.value)} />
+                        <input id='username' type="text" onChange={(e) => setUsername(e.target.value)} />
                         <label>Password: </label>
-                        <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                        <input id='password' type="password" onChange={(e) => setPassword(e.target.value)} />
                     </form>
+                    <div id='buttons'>
                     <button onClick={handleLogin}>Login</button>
+                    <button onClick={handleRegister}>Zarejestruj się</button>
+                    </div>
                 </>
             ) : (
-                <>
+                <div id='buttons'>
                     <button onClick={handleProtectedRequest}>Get Protected Data</button>
                     <button onClick={handleLogout}>Wyloguj się</button>
-                </>
+                </div>
             )}
             <>
             <p>{message}</p>
